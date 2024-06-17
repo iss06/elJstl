@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import vo.UserVo;
 
 @WebServlet("/01")
 public class Servlet01 extends HttpServlet {
@@ -21,8 +22,23 @@ public class Servlet01 extends HttpServlet {
 		boolean bValue = true;
 		Object nullValue = null;
 		
+		//	VO 객체
+		UserVo vo = new UserVo();
+		vo.setNo(100);
+		vo.setEmail("hong@example.com");
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/01.jsp");
+		//	요청 속성에 데이터 설정 
+		request.setAttribute("iVal", iValue);
+		request.setAttribute("fval", fValue);
+		request.setAttribute("sVal", sValue);
+		request.setAttribute("bVal", bValue);
+		request.setAttribute("nullVal", nullValue);
+		
+		request.setAttribute("userVo", vo);
+		
+		//	JSP로 포워딩
+		RequestDispatcher rd = 
+				request.getRequestDispatcher("/WEB-INF/views/01.jsp");
 		rd.forward(request, response);
 
 	}

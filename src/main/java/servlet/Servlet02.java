@@ -14,8 +14,12 @@ public class Servlet02 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		int iValue = 10;
+		float fValue = 3.14159f;
+		request.setAttribute("iVal", iValue);
+		request.setAttribute("fVal", fValue);
 		request.setAttribute("reqVal", "abcdefgh");
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/02.jsp");
 		rd.forward(request, response);
 	}
