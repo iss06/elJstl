@@ -20,7 +20,8 @@ public class Servlet11 extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/11_color_jstl.jsp");
+		RequestDispatcher rd = 
+				request.getRequestDispatcher("/WEB-INF/views/11_color_jstl.jsp");
 		rd.forward(request, response);
 
 	}

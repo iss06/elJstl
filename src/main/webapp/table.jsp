@@ -8,10 +8,10 @@ http://localhost:8080/elJstl-live/table.jsp?r=5&c=3
 	String col = request.getParameter( "c" );
 	
 	int nRow;
-	if( row == null ) {
-		nRow = 3;
+	if( row == null ) {	//	r 파라미터가 전달되지 않음
+		nRow = 3;	//	기본 값
 	} else {
-		nRow = Integer.parseInt( row );
+		nRow = Integer.parseInt( row );	//	r파라미터 정수형으로 캐스팅
 	}
 	
 	int nCol;
@@ -31,10 +31,12 @@ http://localhost:8080/elJstl-live/table.jsp?r=5&c=3
 	<table border='1px' cellspacing='0' cellpadding='10px'>
 		<%
 		for(int i = 0 ; i < nRow; i++ ) {	
+			//	행루프
 		%>
 		<tr>
 			<%
 			for( int j = 0; j < nCol; j++ ) {
+				//	열루프
 			%>
 			<td>cell(<%=i %>, <%=j %>)</td>
 			<%

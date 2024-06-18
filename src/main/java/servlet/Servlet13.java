@@ -25,7 +25,8 @@ public class Servlet13 extends HttpServlet {
 		}
 		
 		request.setAttribute("userList", userList);
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/13.jsp");
+		RequestDispatcher rd = 
+				request.getRequestDispatcher("/WEB-INF/views/13.jsp");
 		rd.forward(request, response);
 
 	}
